@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Imágenes en Canvas</title>
+<script language="javascript">
+function cargaContextoCanvas(idCanvas){
+   var elemento = document.getElementById(idCanvas);
+   if(elemento && elemento.getContext){
+      var contexto = elemento.getContext('2d');
+      if(contexto){
+         return contexto;
+      }
+   }
+   return FALSE;
+}
+
+
+window.onload = function(){
+   //Recibimos el elemento canvas
+   var ctx = cargaContextoCanvas('micanvas');
+
+
+   if(ctx){
+      //Creo una imagen conun objeto Image de Javascript
+      var img = new Image();
+      //indico la URL de la imagen
+      img.src = 'd.jpg';
+      //defino el evento onload del objeto imagen
+      img.onload = function(){
+         //incluyo la imagen en el canvas
+         ctx.drawImage(img, 30, 15, 130, 110);
+
+ctx.shadowOffsetX = 10;
+ctx.shadowOffsetY = 10;
+ctx.shadowBlur = 10;
+ctx.shadowColor = "red";
+         
+      }
+   }
+}
+
+</script>
+</head>
+<body>
+
+<BODY BACKGROUND="usc4.jpg">
+<canvas id= "micanvas" width="200" height="200">
+
+Tu navegador no soporta canvas.
+</canvas>
+
+</body>
+</html>
