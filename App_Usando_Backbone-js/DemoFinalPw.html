@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"> 
+    <link href="css/estilos.css" rel="stylesheet" media="screen">
+    
+	<title>Estrenos de Cine</title>
+	<!-- load the libraries we need -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	
+	<script src="lib/jquery-1.8.0.min.js"></script>
+	<script src="lib/underscore-min.js"></script>
+    <script src="lib/backbone-min.js"></script>
+    <!-- load our scripts -->
+    <script src="src/views/view.js"></script>
+    <script src="src/models/model.js"></script>
+    <script src="src/app.js"></script>
+	
+</head>
+
+<body>
+
+<BODY BGCOLOR="black"> 
+<span style="color:#80BFFF">
+<center>
+<object width="560" height="315">
+<param name="movie" value="http://www.youtube.com/v/uhRtKPaV9I8?version=3&amp;hl=es_MX&amp;rel=0"></param>
+<param name="allowFullScreen" value="true"></param>
+<param name="allowscriptaccess" value="always"></param>
+<embed src="http://www.youtube.com/v/uhRtKPaV9I8?version=3&amp;hl=es_MX&amp;rel=0" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed>
+</object>
+</center>
+	<div id="content">
+		<div id="ui"></div>
+		<div id="app"></div>
+	</div>
+</body>
+
+<script type="text/template" id="searchTemplate">
+<span style="color:#80BFFF">
+<center> <h1>Estrenos de cine</h1> </center>
+
+
+<p>
+<span style="color:#80BFFF">
+<a style="color:#80BFFF">
+	<strong>Buscar</strong>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+
+	Título o Autor: <input id="titulo" onKeyUp="onTituloFilter()" value='<%= filter %>'/>
+
+	&nbsp;&nbsp;&nbsp;&nbsp;
+
+	<strong>Ordenar</strong>
+			<select onChange="onChangeSortOrder()" id="sortField">
+				<option <% if(sortField === "titulo"){ %> selected <% } %> value="titulo">Titulo</option>
+				<option <% if(sortField === "autor"){ %> selected <% } %> value="autor">Autor</option>
+				
+		</select>
+	<select onChange="onChangeSortOrder()" id="sortOrder">
+			<option <% if(sortOrder === "asc"){ %> selected <% } %> value="asc">Ascendente</option>
+		<option <% if(sortOrder === "desc"){ %> selected <% } %> value="desc">Descendente</option>
+	</select>
+</p>
+</script>
+<script type="text/template" id="itemTemplate">
+
+    <div>
+    
+    	<a href='#/libro/<%= id %>'>
+			<img src='<%= img %>' width='95' height='150'>
+				
+				
+			
+		</a>
+		<p >
+
+		<span style="color:#80BFFF">
+	    	<a href='#/libro/<%= id %>'><%= titulo %></a>
+	    	<br/><br/>
+			by <strong><%= Direccion %></strong>
+			<br/><br/>
+			<%= descripcion %>
+	    </p>
+    </div>
+	
+	
+	
+	
+ </script>
+
+ <script type="text/template" id="fichaTemplate">
+ 
+ 	<a href="#/libros">< volver</a>
+	<h2><%= titulo %></h2>
+	
+	
+	<p>
+	<span style="color:#80BFFF">
+		<img src='<%= img %>' width='95' height='150'>
+		<br/><br/>
+		by <strong><%= Direccion %></strong>
+		<br/><br/>
+		<i><%= editorial %></i>
+		<br/><br/>
+		<br/><br/>
+		 <strong><%= descripcion %></strong>
+		<br/><br/>
+		
+	</p>
+
+ </script>
+
+
+<script type="text/javascript">
+	$(function(){ 
+		
+		var bootstrap = {
+			data: [
+			   {
+				 id: "1",
+				 titulo: "Rapidos y Furiosos 6 ",
+				 Direccion: "	Neal H. Moritz, Vin Diesel, Clayton Townsend",
+				 descripcion: "La última entrega de la mejor saga de peliculas de carros y acción, esta vez Luke Hobbs (Dwayne Johnson) recibe un informe sobre un robo militar en Berlin, en donde esta involucrada Letty (Michelle Rodriguez), quien, al parecer, sigue viva. El agente Hobbs junto a Monica Fuentes(Eva Mendes), emprenden un viaje hacia Europa, para encontrar primero a Dom (Vin Diesel) y avisarle lo sucedido....",
+				 img: "img/ryf.jpg"
+                 },
+				
+				{
+				 id: "2",
+				 titulo: "Titanes del Pacifico",
+				 Direccion: "Guillermo del Toro",
+				 descripcion: "Cuando un ataque alienígena amenaza la existencia de la tierra, robots gigantes pilotados por humanos son desplegados para luchar contra la amenaza. 'Pacific Rim' es dirigida por Guillermo del Toro, con las actuaciones de Idris Elba, Charlie Hunnam y Rinko Kikuchi....",
+				  img: "img/titanes.jpg"
+				},
+				{
+				 id: "3",
+				 titulo: "Que paso ayer 3",
+				 Direccion: "Todd Phillips",
+				 descripcion: "Esta vez no hay boda. No hay fiesta de graduación. ¿Qué puede ir mal? Pero cuando los lobos salen a la carretera, la suerte está echada. Tercera entrega de la franquicia iniciada en 2009 con Qué Pasó Ayer...",
+				 img: "img/ayer.jpg"
+				},
+				{
+				
+				 id: "4",
+				 titulo: "El hombre de Acero",
+				 Direccion: "Zack Snyder",
+				 descripcion: "Frente al super héroe están los otros dos supervivientes del Planeta Krypton, el malvado General Zod, representado por el nominado al Oscar® Michael Shannon (“Revolutionary Road”), y Faora, la diabólica socia de Zod, interpretada por Antje Traue. También procedentes de Krypton, de donde Superman es nativo, están Lara Lor-Van, la madre de Superman, interpretada por Ayelet Zurer (“Ángeles y demonios”), y el padre de Superman, Jor-El, interpretado por el ganador del Premio de la Academia Russell Crowe (“Gladiator”).",
+				 img: "img/superman.jpg"
+				 
+				}
+			]
+		};
+
+		App.start(bootstrap);
+
+		//ui event listeners
+		onChangeSortOrder = function()
+		{
+			App.sortBy($('#sortField').val(), $('#sortOrder').val());
+		}
+
+		//ui event listeners
+		onTituloFilter=function()
+		{
+			App.filterBy($('#titulo').val());
+		}
+
+	});
+</script>
+</html>

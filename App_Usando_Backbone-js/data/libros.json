@@ -1,0 +1,28 @@
+[
+   {
+	 "id": "1",
+	 "titulo": "Rapidos y Furiosos 6 ",
+	 "Direccion": "	Neal H. Moritz, Vin Diesel, Clayton Townsend",
+	 "editorial": "dogildo",
+	 "descripcion": "Después de su exitoso golpe en Rio de Janiero, Dominic Toretto (Vin Diesel), Brian O'Conner (Paul Walker) y su equipo se han dispersado en todo el mundo: Dominic vive con Elena (Elsa Pataky), su hermana Mia (Jordana Brewster) vive con Brian y su hijo Jack en las Islas Canarias, Gisele (Gal Gadot) y Han (Sung Kang) se han trasladado a Hong Kong (China), y Roman (Tyrese Gibson) y Tej (Chris "Ludacris" Bridges) viven en el lujo. El servicio de Seguridad Diplomática (DSS), el agente Luke Hobbs (Dwayne Johnson) y su compañera Riley (Gina Carano) investigan la destrucción de un convoy militar ruso por el ex soldado de las fuerzas especiales británicas Owen Shaw (Luke Evans) y su equipo. Hobbs sigue la pista de Dominic y le convence para ayudar a acabar con Shaw después de mostrarle una foto reciente de Letty Ortiz (Michelle Rodríguez) , ex novia de Dominic, quien pensó que había muerto. Dominic reúne a su equipo y aceptan la misión a cambio de una amnistía total para los crímenes del pasado, lo que les permitirá regresar a casa, a Estados Unidos, Mia y Elena se quedan con Jack..",
+	 "img": "img/Rapidos-y-Furiosos-6.jpg"
+	 },
+	{
+	 "id": "2",
+	 "titulo": "Juego de tronos",
+	 "autor": "George R. R. Martin",
+	 "editorial": "Gigamesh",
+	 "descripcion": "Tras el largo verano, el invierno se acerca a los Siete Reinos. Lord Eddard Stark, señor de Invernalia, deja sus dominios para unirse a la corte de su amigo el rey Robert Baratheon, llamado el Usurpador, hombre díscolo y otrora guerrero audaz cuyas mayores aficiones son comer, beber y engendrar bastardos. Eddard Stark ocupará el cargo de Mano del Rey e intentará desentrañar una maraña de intrigas que pondrá en peligro su vida y la de todos los suyos. En un mundo cuyas estaciones pueden durar decenios y en el que retazos de una magia inmemorial y olvidada surgen en los rincones más sombríos y maravillosos, la traición y la lealtad, la compasión y la sed de venganza, el amor y el poder hacen del juego de tronos una poderosa trampa que atrapará en sus fauces a los personajes... y al lector.",
+	 "img": "img/img2.jpg"
+	},
+	{
+	 "id": "3",
+	 "titulo": "I robot",
+	 "autor": "Isaac Asimov",
+	 "editorial": "Edhasa",
+	 "descripcion": "Los robots de Isaac Asimov son máquinas capaces de llevar a cabo muy diversas tareas, y que a menudo se plantean a sí mismos problemas de 'conducta humana'. Pero estas cuestiones se resuelven en Yo, robot en el ámbito de las tres leyes fundamentales de la robótica, concebidas por Asimov, y que no dejan de proponer extraordinarias paradojas que a veces se explican por errores de funcionamiento y otras por la creciente complejidad de los 'programas'. Las paradojas que se plantean en estos relatos futuristas no son sólo ingeniosos ejercicios intelectuales sino sobre todo una indagación sobre la situación del hombre actual en relación con los avances tecnológicos y con la experiencia del tiempo.",
+	 "img": "img/img3.jpg"
+	}
+]
+
+
